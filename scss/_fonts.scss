@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Amble';
+  src: local('Amble Light'), local('Amble-Light'), url('../fonts/amblelight.woff2') format('woff2'), url('../fonts/amblelight.woff') format('woff'), url('../fonts/amblelight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Amble';
+  src: local('Amble Light Italic'), local('Amble-LightItalic'), url('../fonts/amblelightitalic.woff2') format('woff2'), url('../fonts/amblelightitalic.woff') format('woff'), url('../fonts/amblelightitalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Amble';
+  src: local('Amble Regular'), local('Amble-Regular'), url('../fonts/ambleregular.woff2') format('woff2'), url('../fonts/ambleregular.woff') format('woff'), url('../fonts/ambleregular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Amble';
+  src: local('Amble Italic'), local('Amble-Italic'), url('../fonts/ambleitalic.woff2') format('woff2'), url('../fonts/ambleitalic.woff') format('woff'), url('../fonts/ambleitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Amble';
+  src: local('Amble Bold'), local('Amble-Bold'), url('../fonts/amblebold.woff2') format('woff2'), url('../fonts/amblebold.woff') format('woff'), url('../fonts/amblebold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Amble';
+  src: local('Amble Bold Italic'), local('Amble-BoldItalic'), url('../fonts/amblebolditalic.woff2') format('woff2'), url('../fonts/amblebolditalic.woff') format('woff'), url('../fonts/amblebolditalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'BigJohn';
+  src: url('../fonts/BigJohn.eot');
+  src: url('../fonts/BigJohn.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/BigJohn.svg#BigJohn') format('svg'),
+       url('../fonts/BigJohn.ttf') format('truetype'),
+       url('../fonts/BigJohn.woff') format('woff'),
+       url('../fonts/BigJohn.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

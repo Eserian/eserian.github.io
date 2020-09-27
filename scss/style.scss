@@ -1,0 +1,690 @@
+@import "_fonts";
+
+@mixin flexbox() {
+  display: flex;
+}
+
+$fontFamily: "Amble";
+
+$minWidth: 320px;
+$xl: 1200;
+$lg: 992;
+$md: 767;
+$sm: 480;
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+nav,
+footer,
+header,
+aside,
+section {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: $minWidth;
+  position: relative;
+  width: 100%;
+  color: #000;
+}
+body {
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  font-family: $fontFamily;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: $fontFamily;
+}
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.header {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  @media (max-width: #{$lg}px) {
+    top: 20px;
+    left: 20px;
+  }
+}
+
+.container {
+  max-width: #{$xl}px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 100%;
+  @media (max-width: #{$xl}px) {
+    max-width: 970px;
+  }
+  @media (max-width: #{$lg}px) {
+    max-width: 750px;
+  }
+  @media (max-width: #{$sm}px) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+.flex-a {
+  flex: 1 1 auto;
+}
+
+.flex {
+  @include flexbox();
+
+  &-jc-sb {
+    @include flexbox();
+    justify-content: space-between;
+  }
+
+  &-jc-center {
+    @include flexbox();
+    justify-content: center;
+  }
+
+  &-jc-evenly {
+    @include flexbox();
+    justify-content: space-evenly;
+  }
+}
+
+.f-w {
+  flex-wrap: wrap;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-flex-end {
+  align-items: flex-end;
+}
+
+.fd-column {
+  flex-direction: column;
+}
+
+.home {
+  background-image: url("../images/homebg.jpg");
+}
+
+.mh-100vh {
+  min-height: 100vh;
+}
+
+.bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.c-w {
+  color: #fff;
+}
+
+.py-40 {
+  padding: 40px 0;
+}
+
+.py-120 {
+  padding: 120px 0;
+}
+
+.py-100 {
+  padding: 100px 0;
+}
+
+.py-200 {
+  padding: 200px 0;
+}
+
+.m-a {
+  margin: auto;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.my-30 {
+  margin: 30px 0;
+}
+
+.main-title {
+  font-family: "BigJohn";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 60px;
+  @media (max-width: #{$sm}px) {
+    font-size: 37px;
+  }
+}
+
+.separator {
+  height: 2px;
+  width: 85px;
+  @media (max-width: #{$sm}px) {
+    margin: 30px auto;
+  }
+}
+
+.bg-w {
+  background: #fff;
+}
+
+.bg-b {
+  background: #000;
+}
+
+.home-footer {
+  position: relative;
+  margin-top: 20px;
+  position: relative;
+  width: 40px;
+  height: 70px;
+}
+
+.subtitle {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 1.1px;
+  width: 55%;
+  margin: 0 auto;
+  @media (max-width: #{$sm}px) {
+    font-size: 18px;
+  }
+}
+
+.scroll {
+  position: absolute;
+  left: 50%;
+  width: 40px;
+  height: 70px;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -35px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+
+  &:before {
+    position: absolute;
+    left: 50%;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    margin-left: -4px;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(46px);
+  }
+}
+
+.title {
+  font-family: "BigJohn";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+.s-title {
+  font-family: "BigJohn";
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.m-50-auto {
+  margin: 50px auto;
+}
+
+.m-75-auto {
+  margin: 75px auto;
+}
+
+.px-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.text {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 36px;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.creativity {
+  background-image: url("../images/creativitybg.jpg");
+}
+
+.help {
+  background-image: url("../images/helpbg.jpg");
+}
+
+.video {
+  background-image: url("../images/videobg.jpg");
+}
+
+.quote {
+  background-image: url("../images/quotebg.jpg");
+}
+
+.btn {
+  display: inline-block;
+  max-width: 90%;
+  word-wrap: break-word;
+  cursor: pointer;
+  color: #fff;
+  font-family: Amble;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 1.2px;
+  border: 3px solid #fff;
+  padding: 20px 80px;
+  @media (max-width: #{$sm}px) {
+    padding: 10px 30px;
+    font-size: 20px;
+  }
+
+  &-b {
+    display: inline-block;
+    margin-top: 80px;
+    color: #000;
+    font-family: Amble;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: 0.96px;
+    border: 3px solid #000;
+    padding: 0 90px;
+    @media (max-width: #{$sm}px) {
+      padding: 0 40px;
+      font-size: 25px;
+    }
+  }
+
+  &-m {
+    display: inline-block;
+    color: #222;
+    border: 3px solid #222;
+    width: 180px;
+    height: 65px;
+    font-family: "Amble", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    background-color: transparent;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 0.4em;
+    @media (max-width: #{$sm}px) {
+      width: 150px;
+    }
+  }
+}
+
+.nav-horizontal {
+  margin: 0 auto 85px auto;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-family: "Amble Regular", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: black;
+  margin: 10px 10px;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.portfolio-item {
+  max-width: 370px;
+  max-height: 420px;
+  margin-bottom: 20px;
+  position: relative;
+  @media (max-width: #{$sm}px) {
+    max-width: 300px;
+    max-height: 370px;
+  }
+}
+
+.portfolio-item-overlay {
+  background: rgba(12, 38, 51, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  opacity: 0;
+  border: 10px solid #000000;
+  padding: 150px 0 150px 0;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.overlay-title {
+  font-family: "BigJohn";
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  margin-bottom: 25px;
+}
+
+.overlay-text {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.sep2 {
+  height: 2px;
+  width: 50px;
+  margin: 30px auto;
+  background: #d87843;
+}
+
+.logo {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+
+  &:hover {
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+  }
+}
+
+.clients-item {
+  margin: 30px 30px;
+}
+
+.clients {
+  background: #f4f4f4;
+}
+
+.team-item {
+  position: relative;
+  max-width: 270px;
+  max-height: 365px;
+  margin-bottom: 20px;
+
+  &-img {
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover {
+    .team-item-overlay {
+      opacity: 1;
+    }
+  }
+
+  &-overlay {
+    background: rgba(52, 52, 52, 0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    opacity: 0;
+    border: 7px solid #000000;
+
+    &-text {
+      margin: 250px auto 20px auto;
+    }
+  }
+
+  &-title {
+    font-family: "BigJohn";
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  &-link {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  &-subtitle {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  &-empty {
+    border: 2px solid #222;
+    width: 270px;
+    height: 360px;
+    padding: 80px 45px 40px 45px;
+  }
+}
+
+.video-item {
+  margin: 20px auto 20px auto;
+}
+
+.small-sep {
+  height: 2px;
+  width: 85px;
+  margin: 40px auto;
+  background-color: #222;
+}
+
+.advanteges {
+  max-width: 370px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 15px;
+}
+
+.advanteges-title {
+  color: #222;
+  font-family: "Amble";
+  font-size: 16px;
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0.24px;
+  line-height: 24px;
+  margin: 40px auto;
+}
+.advanteges-text {
+  color: #222;
+  font-family: "Amble";
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.24px;
+  line-height: 24px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.location {
+  display: flex;
+  background-color: #f2f2f2;
+  flex: 1 1 400px;
+  padding: 120px 0;
+  justify-content: space-around;
+}
+
+.location-content {
+  max-width: 240px;
+}
+
+.loc-title {
+  font-family: "BigJohn";
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #222222;
+}
+
+.contacts-text {
+  font-family: "Amble";
+  font-size: 22px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.82;
+  letter-spacing: normal;
+  text-align: left;
+  font-style: italic;
+}
+
+.social {
+  margin-right: 25px;
+  margin-bottom: 20px;
+}
+
+.message {
+  display: flex;
+  flex: 1 1 770px;
+  background-color: #e4e4e4;
+  justify-content: space-around;
+  padding: 120px 20px;
+}
+
+.form-input {
+  display: inline-block;
+  outline: none;
+  width: 45%;
+  height: 35px;
+  padding: 6px 25px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #afafaf;
+  margin-bottom: 110px;
+}
+
+.form-textarea {
+  display: inline-block;
+  resize: vertical;
+  outline: none;
+  width: 100%;
+  height: 35px;
+  padding: 6px 25px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #afafaf;
+  margin-bottom: 40px;
+}
+
+.form {
+  max-width: 670px;
+}
+
+.footer {
+  background-color: #222222;
+}
+
+.w-100 {
+  max-width: 100%;
+}
